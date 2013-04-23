@@ -1,6 +1,7 @@
 # coding: utf-8
 from django.test import TestCase
 
+
 class HomePageTest(TestCase):
     def setUp(self):
         self.resp = self.client.get('/')
