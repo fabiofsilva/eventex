@@ -27,7 +27,10 @@ class SubscriptionTest(TestCase):
         'Unicode must be equal nome'
         self.assertEqual(u'Fabio', unicode(self.obj))
                 
-        
+    def test_paid_default_value_is_False(self):
+        'Pago deve ter default False'
+        self.assertEqual(False, self.obj.pago)
+           
 class SubscriptionUniqueTest(TestCase):
     def setUp(self):
         Subscription.objects.create(nome='Fabio', cpf='11111111111', email='fabio@email.com', telefone='21-12345678')
@@ -37,10 +40,10 @@ class SubscriptionUniqueTest(TestCase):
         s = Subscription(nome='Fabio', cpf='11111111111', email='outro@email.com', telefone='21-12345678')
         self.assertRaises(IntegrityError, s.save)
         
-    def test_email_unique(self):
-        'E-mail must be unique'
-        s = Subscription(nome='Fabio', cpf='11111111112', email='fabio@email.com', telefone='21-12345678')
-        self.assertRaises(IntegrityError, s.save)
+    def test_email_can_repeat(self):
+        'E-mail can repeat'
+        s = Subscription.objects.create(nome='Fabio', cpf='11111111112', email='fabio@email.com', telefone='21-12345678')
+        self.assertEqual(2, s.pk)
         
         
         
