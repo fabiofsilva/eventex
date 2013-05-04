@@ -1,10 +1,11 @@
-<!DOCTYPE HTML PUBLIC "-­‐//W3C//DTD HTML 4.01//EN">
+<!DOCTYPE html>
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="description" content="EventeX" />
-  <meta http-equiv="content-Language" content="en-US" />
-  <link type="text/css" href="{{ STATIC_URL }}css/style.css" rel="stylesheet" media="screen" />
+  <meta http-equiv="content-Language" content="pt-BR" />
+  <link type="text/css" href="{{ STATIC_URL }}css/kube.css" rel="stylesheet" media="screen" />
+  <link type="text/css" href="{{ STATIC_URL }}css/custom.css" rel="stylesheet" media="screen" />
   <title>EventeX</title>
 </head>
 <body>
@@ -20,12 +21,14 @@
         {% endblock content %}
       </div>
       <hr>
-      <div id="footer">
-        <p>
-          &copy; 2013. EventeX, some rights reserved. 
-          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/br/80x15.png" /></a>
+      <div id="footer" class="row split">
+        <div class="fivesixth">
+            &copy; 2013. EventeX, some rights reserved. 
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/br/80x15.png" /></a>
+        </div>
+        <div class="sixth push-right">
           <a href="http://www.djangoproject.com/" id="django"><img src="https://www.djangoproject.com/m/img/badges/djangosite80x15.gif" border="0" alt="A Django site." title="A Django site." /></a>
-        </p>
+        </div>
       </div>
   </div>  
 </body>

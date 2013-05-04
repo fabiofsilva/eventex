@@ -1,34 +1,38 @@
 {% extends "base.html" %}
+{% load widget_tweaks %}
 {% block content %}
   <h1>Formulário de inscrição</h1>
-  <form action="." method="POST">
+  <form action="." method="POST" class="forms">
     {% csrf_token %}
     <p>{{ form.non_field_errors }}</p>
     <p>
-    <label for="{{ form.nome.id_for_label }}">{{ form.nome.label }}:</label>
+    <label for="{{ form.nome.id_for_label }}" class="bold">{{ form.nome.label }}:</label>
     {{ form.nome }}
     {{ form.nome.errors }}
     </p>
 
     <p>
-    <label for="{{ form.cpf.id_for_label }}">{{ form.cpf.label }}:</label>
+    <label for="{{ form.cpf.id_for_label }}" class="bold">{{ form.cpf.label }}:</label>
     {{ form.cpf }}
     {{ form.cpf.errors }}
     </p>
 
     <p>
-    <label for="{{ form.email.id_for_label }}">{{ form.email.label }}:</label>
-    {{ form.email }}
+    <label for="{{ form.email.id_for_label }}" class="bold">{{ form.email.label }}:</label>
+    {% render_field form.email type="email" class="seven input-gray" placeholder="exemplo@exemplo.com"%}
     {{ form.email.errors }}
     </p>
 
     <p>
-    <label for="{{ form.telefone.id_for_label }}">{{ form.telefone.label }}</label>
-    {{ form.telefone }}
+    <label for="{{ form.telefone.id_for_label }}" class="bold">{{ form.telefone.label }}</label>
+    (
+     <input type="text" id="id_telefone_0" name="telefone_0" size="3">
+    )
+    <input type="text" id="id_telefone_1" name="telefone_1" size="8">
     {{ form.telefone.errors }}
     </p>
 
-    <input type="submit" value="Enviar!" class="button"/>
+    <input type="submit" value="Enviar!" class="btn"/>
                     
   </form>
 {% endblock content %}
