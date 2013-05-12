@@ -163,7 +163,4 @@ LOGGING = {
 
 SOUTH_TESTS_MIGRATE = False
 
-AUTHENTICATION_BACKENDS = (
-        'eventex.myauth.backends.EmailBackend',
-        'django.contrib.auth.backends.ModelBackend',
-)
+AUTH_USER_MODEL = 'myauth.User'
