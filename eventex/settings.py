@@ -121,6 +121,7 @@ INSTALLED_APPS = (
     'widget_tweaks',
     'eventex.core',
     'eventex.subscriptions',
+    'eventex.myauth',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -161,3 +162,7 @@ LOGGING = {
 }
 
 SOUTH_TESTS_MIGRATE = False
+
+AUTHENTICATION_BACKENDS = (
+        'eventex.myauth.backends.EmailBackend',
+)
