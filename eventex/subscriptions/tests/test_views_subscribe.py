@@ -64,6 +64,7 @@ class SubscribeInvalidPostTest(TestCase):
         
 class TemplateRegressionTest(TestCase):
     def test_template_has_non_field_errors(self):
+        'Template deve ter o campo de erros do form'
         invalid_data = dict(nome='Fabio', cpf='12345678901')
         response = self.client.post(r('subscriptions:subscribe'), invalid_data)
         self.assertContains(response, '<ul class="errorlist">')   

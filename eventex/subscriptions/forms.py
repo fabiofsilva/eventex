@@ -14,8 +14,8 @@ def CPFValidator(value):
 
 class PhoneWidget(forms.MultiWidget):
     def __init__(self, attrs=None):
-        widgets = (forms.TextInput(attrs=attrs),
-                   forms.TextInput(attrs=attrs))        
+        widgets = (forms.TextInput(attrs=dict(max_length=2, size=2)),
+                   forms.TextInput(attrs=dict(max_length=9, size=9)))        
         super(PhoneWidget, self).__init__(widgets, attrs=attrs)
         
     def decompress(self, value):

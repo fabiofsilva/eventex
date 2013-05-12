@@ -28,6 +28,7 @@ class DetailTest(TestCase):
                 
 class DetailNotFound(TestCase):
     def test_not_found(self):
+        'URL inválida deve retornar status code 404'
         response = self.client.get(r('subscriptions:detail', args=[0]))
         self.assertEqual(404, response.status_code)
     

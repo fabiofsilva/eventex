@@ -6,21 +6,17 @@ from eventex.subscriptions.models import Subscription
 
 class SubscriptionTest(TestCase):
     def setUp(self):
-        self.obj = Subscription(
-            nome='Fabio',
-            cpf='11111111111',
-            email='fabio@email.com',
-            telefone='21-12345678'                                
-        )
+        self.obj = Subscription.objects.create(nome='Fabio',
+                                               cpf='11111111111',
+                                               email='fabio@email.com',
+                                               telefone='21-12345678')
     
     def test_create(self):
         'Subscription must have nome, cpf, email, telefone'
-        self.obj.save()
         self.assertEqual(1, self.obj.pk)
         
     def test_has_created_at(self):
         'Subscription must have automatic created at'
-        self.obj.save()
         self.assertIsInstance(self.obj.criado_em, datetime)
 
     def test_unicode(self):

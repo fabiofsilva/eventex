@@ -19,7 +19,7 @@
 
     <p>
     <label for="{{ form.email.id_for_label }}" class="bold">{{ form.email.label }}:</label>
-    {% render_field form.email type="email" class="seven input-gray" placeholder="exemplo@exemplo.com"%}
+    {% render_field form.email type="text" class="seven input-gray" placeholder="exemplo@exemplo.com"%}
     {{ form.email.errors }}
     </p>
 
@@ -28,7 +28,7 @@
     (
      <input type="text" id="id_telefone_0" name="telefone_0" size="3">
     )
-    <input type="text" id="id_telefone_1" name="telefone_1" size="8">
+    <input type="text" id="id_telefone_1" name="telefone_1" size="9">
     {{ form.telefone.errors }}
     </p>
 

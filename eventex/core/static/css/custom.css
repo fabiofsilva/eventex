@@ -3,6 +3,14 @@
 body {
 }
 
+/* Responsive images and other embedded objects */
+object,
+embed,
+video,
+iframe {
+  width: 50%;
+}
+
 /* =Links
 -----------------------------------------------------------------------------*/
 
