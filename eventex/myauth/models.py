@@ -9,7 +9,7 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
     
-    def create_super_user(self, cpf, name=None, password=None):
+    def create_superuser(self, cpf, name=None, password=None):
         return self.create_user(cpf, name, password)
 
 class User(AbstractBaseUser):
